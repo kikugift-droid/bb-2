@@ -1,0 +1,136 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "insane elevator",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "example hub",
+   LoadingSubtitle = "by Jourdain1210",
+   ShowText = "Rayfield", -- for mobile users to unhide Rayfield, change if you'd like
+   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from emitting warnings when the script has a version mismatch with the interface.
+
+   -- ScriptID = "sid_xxxxxxxxxxxx", -- Your Script ID from developer.sirius.menu — enables analytics, managed keys, and script hosting
+
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "1981 Hub"
+        },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "insane elevator",
+      Subtitle = "link in youtube",
+      Note = "subscribe my channel", -- Use this to tell the user how to get a key
+      FileName = "examplehubkey", -- It is recommended to use something unique, as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+        Key = {"https://pastebin.com/raw/L72y914k"} -- List of keys that the system will accept, can be RAW file links (pastebin, github, etc.) or simple strings ("hello", "key22")
+        }
+    })
+
+local mainTab = Window:CreateTab("lobby", nil) -- Title, Image
+local mainSection = Tab:CreateSection("main")
+
+Rayfield:Notify({
+   Title = "you executed the script",
+   Content = "very good gui",
+   Duration = 5,
+   Image = nil,
+   action = { --Notification Button
+    Ignore = {
+    Name =Okay!",
+    Callback = Function()
+    Print("the user tapped okay")
+  end
+ },
+},
+})            
+
+local Button = MainTab:CreateButton({
+   Name = "infinite Jump",
+   Callback = function()
+       --toggle the infinite jump between on or off on every script run
+ G.infiniteJump = not G.infiniteJump
+
+if G.infiniteJumpstarted == nil then
+ --ensures this only runs once to save resources
+     G.infiniteJumpstarted = true
+
+-Notifies readiness
+game.StarterGui:SetCore("SendNotification", (Title="Youtube Hub"; Text "Infinite Jump Activated!"; Duration 5;))
+-The actual infinite jump
+local plr game: GetService('Players). LocelPlayer
+local plr:GetMouse()
+.KeyDown:connect(function(k) if G.infin jump then
+if k:byte() 32 then.
+humanoid game: GetService Players". LocalPlayer.Character: FindFirstChildOfClass("Humanoid")
+humanoid: ChangeState('Jumping")
+wait()
+end
+humanoid: ChangeState("Seated")
+end end)
+end.
+Output
+/usr/bin/lus: main.lus: attempt to index a nil value (global game")
+stack traceback:
+main.lus:1: in main chunk
+[C]: in
+(Execution complete with axit code 1]
+end
+
+   local Slider = MainTab:CreateSlider({
+   Name = "fly slider",
+   Range = {1, 500},
+   Increment = 1,
+   Suffix = "speed",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    local Input = Tab:CreateInput()
+       Game.Players.LocalPlayer.Character.Humanoid.FlySpeed = (Value)
+     end                                    
+})
+
+local Dropdown = MainTab:CreateDropdown({
+   Name = "Select area",
+   Options = {"Elevator", "Lobby"},
+   CurrentOption = {"Lobby"},
+   MultipleOptions = false,
+   Flag = "teleport", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Options)
+   print(Option)
+  end                                    
+})
+
+local MiscTab = Window:CreateTab(",Misc", nil) -- Title, Image
+local TeleportTab = Window:CreateTab("Lobby", nil) -- Title, Image
+
+local Button = TeleportTab:CreateButton({
+   Name = "Lobby",
+   Callback = function()
+   Print('Elevator')
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Noclip",
+   CurrentValue = false,
+   Flag = "ToggleExample", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   Print('Hello')
+   end,
+})   
+   local Input = Tab:CreateInput({
+   Name = "Jump Power",
+   CurrentValue = "",
+   PlaceholderText = "1-50",
+   RemoveTextAfterFocusLost = true,
+   Flag = "Input1",
+   Callback = function(Text)
+   Game.Players.LocalPlayer.Character.Humanoid.Jump power = (Value)
+   end,
+})
